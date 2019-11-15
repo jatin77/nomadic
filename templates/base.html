@@ -15,7 +15,8 @@
     <!-- Lightbox -->
     <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}" />
     <link rel="icon" href="{% static 'img/paradiseLogo.png' %}" />
-    <title>paradise</title>
+
+    <title>paradise {% block title %} {% endblock %}</title>
   </head>
   <body>
     <!-- Navbar -->

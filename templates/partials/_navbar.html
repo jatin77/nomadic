@@ -1,65 +1,67 @@
 {% load static %}
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark  sticky-top" style="background-color: black;box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);">
-  <div class="container">
-    <a class="navbar-brand" href="{% url 'index' %}">
-      <img src="{% static 'img/paradiseLogo.png' %}" class="logo" alt="" />
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNavAltMarkup"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <ul class="navbar-nav">
-        <li 
-          {% if '/' == request.path %}
-            class="nav-item active mr-3"
-          {% else %}
-            class="nav-item mr-3"
-          {% endif %}
-        >
-          <a class="nav-link" href="{% url 'index' %}">Home</a>
-        </li>
-        <li   
-          {% if 'about' in request.path %}
-            class="nav-item active mr-3"
-          {% else %}
-            class="nav-item mr-3"
-          {% endif %}
-         >
-          <a class="nav-link" href="{% url 'about' %}">About</a>
-        </li>
-        <li  
-          {% if 'listings' in request.path %}
-           class="nav-item active mr-3"
-          {% else %}
-           class="nav-item mr-3"
-          {% endif %}>
-          <a class="nav-link" href="{% url 'listings' %}">Featured Listings</a>
-        </li>
-      </ul>
+<nav class="navbar navbar-expand-lg navbar-dark  sticky-top"
+    style="background-color: black;box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'img/paradiseLogo.png' %}" class="logo" alt="" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav">
+                <li {% if '/' == request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
+                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                </li>
+                <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li {% if 'listings' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
+                    <a class="nav-link" href="{% url 'listings' %}">Featured Places</a>
+                </li>
+            </ul>
 
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item mr-3">
-          <a class="nav-link" href="register.html">
-            <!-- <i class="fas fa-user-plus"></i>  -->
-            <img style="width: 20px;"  src="{% static 'img/register.png' %}" alt="">
-            Register</a
-          >
-        </li>
-        <li class="nav-item mr-3">
-          <a class="nav-link" href="login.html">
-            <!-- <i class="fas fa-sign-in-alt"></i> -->
-            <img style="width: 20px;" src="{% static 'img/key.png' %}" alt="">
-            Login</a
-          >
-        </li>
-      </ul>
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                <li {% if 'dashboard' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
+
+                    <a class="nav-link" href="{% url 'dashboard' %}">
+                        {{user.username}}</a>
+                </li>
+                <li class="nav-item mr-3">
+                    <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+                        Logout
+                    </a>
+                    <form action="{% url 'logout' %}" id="logout" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden">
+                    </form>
+                </li>
+                {% else %}
+                <li {% if 'register' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
+                    <a class="nav-link" href="{% url 'register' %}">
+
+                        <img style="width: 20px;" src="{% static 'img/register.png' %}" alt="">
+                        Register</a>
+                </li>
+                <li {% if 'login' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
+                    <a class="nav-link" href="{% url 'login' %}">
+
+                        <img style="width: 20px;" src="{% static 'img/key.png' %}" alt="">
+                        Login</a>
+
+                </li>
+                {% endif %}
+
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>

@@ -7,7 +7,7 @@ img {
 }
 
 .logo {
-  width: 80px;
+  width: 50px;
 }
 
 .navbar {
@@ -38,7 +38,7 @@ img {
   left: 0;
   min-height: 400px;
   width: 100%;
-  background: rgba(51, 51, 51, 0.8);
+  background: rgba(51, 51, 51, 0.5);
 }
 
 #services {
@@ -54,7 +54,7 @@ img {
   left: 0;
   min-height: 100%;
   width: 100%;
-  background: rgba(32, 134, 107, 0.8);
+  background: rgba(14, 14, 14, 0.6);
 }
 
 #showcase-inner {
@@ -70,7 +70,7 @@ img {
   left: 0;
   min-height: 100%;
   width: 100%;
-  background: rgba(32, 134, 107, 0.8);
+  background: rgba(14, 14, 14, 0.6);
 }
 #showcase-inner.showcase-search {
   min-height: 270px;
@@ -121,4 +121,27 @@ img {
   #showcase-inner h1 {
     font-size: 40px;
   }
+}
+.btn-royalblue{
+    background-color: royalblue;
+}
+.bg-black{
+    background: #000;
+}
+.text-black{
+    color: #000;
+}
+.my_icon{
+    width:16px;
+}
+.bg-blue{
+    background-color: #3f51b5;
+}
+.text-blue{
+    color: #3f51b5;
+}
+.my-overlay{
+    position: absolute;
+    left:50%;
+    transform:translateX(-50%);
 }
