@@ -1,0 +1,147 @@
+.btn-secondary {
+  color: #fff !important;
+}
+
+img {
+  width: 100%;
+}
+
+.logo {
+  width: 50px;
+}
+
+.navbar {
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+.social a {
+  margin-right: 0.4rem;
+}
+
+#showcase {
+  background: url("../img/showcased.67f15752c6f3.jpg") no-repeat top center fixed/cover;
+  position: relative;
+  min-height: 650px;
+  color: #fff;
+  padding-top: 6rem;
+}
+#showcase .home-search {
+  min-height: 400px;
+  position: relative;
+  border-radius: 5px;
+}
+#showcase .overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 400px;
+  width: 100%;
+  background: rgba(51, 51, 51, 0.5);
+}
+
+#services {
+  background: url("../img/building.9d1ec3117e41.jpg") no-repeat top center fixed/cover;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+#services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  background: rgba(14, 14, 14, 0.6);
+}
+
+#showcase-inner {
+  background: url("../img/building.9d1ec3117e41.jpg") no-repeat top center fixed/cover;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+#showcase-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  background: rgba(14, 14, 14, 0.6);
+}
+#showcase-inner.showcase-search {
+  min-height: 270px;
+}
+
+#work {
+  padding: 6rem 0;
+}
+
+.listing-preview a {
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  #showcase {
+    padding-top: 4rem;
+  }
+  #showcase h1 {
+    font-size: 40px;
+  }
+  .hide-md-down {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #showcase {
+    padding-top: 3rem;
+  }
+  #showcase h1 {
+    font-size: 40px;
+  }
+  #showcase p {
+    display: none;
+  }
+  #top-bar {
+    text-align: center;
+  }
+  #top-bar .social {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 576px) {
+  #showcase h1 {
+    font-size: 30px;
+  }
+  #showcase-inner h1 {
+    font-size: 40px;
+  }
+}
+.btn-royalblue{
+    background-color: royalblue;
+}
+.bg-black{
+    background: #000;
+}
+.text-black{
+    color: #000;
+}
+.my_icon{
+    width:16px;
+}
+.bg-blue{
+    background-color: #3f51b5;
+}
+.text-blue{
+    color: #3f51b5;
+}
+.my-overlay{
+    position: absolute;
+    left:50%;
+    transform:translateX(-50%);
+}
