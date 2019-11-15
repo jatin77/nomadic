@@ -25,7 +25,7 @@ SECRET_KEY = 'm6a4m!i&%r@ud7!rggn$+$p(=z7fe3*t8=fjkzzx02^$3&ba0d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['liveinparadise.herokuapp.com']
 
 
 # Application definition
